@@ -1,0 +1,9 @@
+# 构建产物与本地文件
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.tar
+*.tar.gz
+*.zip
