@@ -5,7 +5,7 @@ ICDSS 基础运行镜像（独立仓库）：**OpenJDK 8 + LibreOffice + Anacond
 仓库：https://github.com/project-icdss/icdss-basic  
 镜像：`ghcr.io/project-icdss/icdss-basic`
 
-由原 `icdss/deploy/basic` 拆分而来，通过 GitHub Actions 构建并推送到 GitHub Container Registry (GHCR)。
+通过 GitHub Actions 构建并推送到 GitHub Container Registry (GHCR)。
 
 ## 镜像内容
 
