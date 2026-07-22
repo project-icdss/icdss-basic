@@ -107,9 +107,14 @@ RUN set -eux \
 ENV PATH=${CONDA_DIR}/bin:${PATH}
 
 # ---------- Python 依赖（PyPI，可通过 PIP_INDEX_URL 换国内源） ----------
+# CentOS 7 仅有 glibc 2.17：Levenshtein>=0.27.3 / rapidfuzz>=3.14 的 Linux wheel
+# 为 manylinux_2_28，pip 会回退源码编译，而系统 GCC 4.8 不支持 C++17。
+# 因此固定仍提供 manylinux2014（glibc 2.17）预编译包的版本，并禁止源码构建。
 RUN pip install --no-cache-dir -i "${PIP_INDEX_URL}" \
+        --only-binary=Levenshtein,rapidfuzz \
         PyMySQL \
-        python-Levenshtein \
+        "python-Levenshtein==0.27.1" \
+        "rapidfuzz==3.13.0" \
     && python -c "import pymysql; import Levenshtein; print('Python deps OK')" \
     && rm -rf /root/.cache/pip /tmp/* /var/tmp/*
 
