@@ -15,7 +15,7 @@ ICDSS 基础运行镜像（独立仓库）：**OpenJDK 8 + LibreOffice + Anacond
 | OpenJDK 8 | 运行时 + devel |
 | LibreOffice | headless + 中文语言包 |
 | Anaconda3 2023.09-0 | 含 SHA256 校验 |
-| PyMySQL / python-Levenshtein | pip 安装 |
+| PyMySQL / python-Levenshtein | pip 安装（Levenshtein==0.27.1、rapidfuzz==3.13.0；兼容 CentOS 7 / glibc 2.17 的 manylinux2014 wheel） |
 
 ## 本地构建
 
